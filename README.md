@@ -53,16 +53,17 @@ combinationToken = "third." + measurementId + "." + AppID + "." + timestamp + ".
 
 # 参数及不同产品访问路径
 
-| 参数          | XONE系列                           | U+系列                     |
-| ------------- | ---------------------------------- | -------------------------- |
-| appid         | 必填                               | 必填                       |
-| timestamp     | 必填                               | 必填                       |
-| token         | 必填                               | 必填                       |
-| measurementId | 必填                               | 必填                       |
-| check_browser | 选填                               | 不支持                     |
-| lang          | `zh` \ `en` \ `cht` \ `jp` \ `vie` | `zh` \ `en` \ `cht` \ `jp` |
-| weight_type   | 不支持                             | `kg`或`lbs`（磅）          |
-| length_type   | 不支持                             | `cm`或`in`（英寸）         |
+| 参数            | XONE系列                             | XONE-MAX系列                 | U+系列                       |
+|---------------|------------------------------------|----------------------------|----------------------------|
+| appid         | 必填                                 | 必填                         | 必填                         |
+| timestamp     | 必填                                 | 必填                         | 必填                         |
+| token         | 必填                                 | 必填                         | 必填                         |
+| measurementId | 必填                                 | 必填                         | 必填                         |
+| check_browser | 选填                                 | 不支持                        | 不支持                        |
+| lang          | `zh` \ `en` \ `cht` \ `jp` \ `vie` | `zh` \ `en` \ `cht` \ `jp` | `zh` \ `en` \ `cht` \ `jp` |
+| weight_type   | 不支持                                | `kg`或`lbs`（磅）              | `kg`或`lbs`（磅）              |
+| length_type   | 不支持                                | `cm`或`in`（英寸）              | `cm`或`in`（英寸）              |
+| agent_id      | 1                                  | 3                          | 1                          |
 
 ~~~
 # xone系列PC端
@@ -71,8 +72,8 @@ https://op.youjiuhealth.com/report/detail/{measurementId}?appid={appid}&timestam
 # xone系列移动端
 https://c.youjiuhealth.com/index.html#/pages/report/show/show?id={$measurementId}&token={$combinationToken}&lang={lang}
 
-# U+系列移动端
-https://mini-fit-butler-client.youjiuhealth.com/index.html#/subPack/report/body-resume/body-resume?type=u-plus&id={measurementId}&token={combinationToken}&lang={lang}&weight_type={weight_type}&length_type={length_type}
+# U+系列、XONE-MAX移动端
+https://mini-fit-butler-client.youjiuhealth.com/index.html#/subPack/report/body-resume/body-resume?type=u-plus&id={measurementId}&token={combinationToken}&agent_id={agent_id}&lang={lang}&weight_type={weight_type}&length_type={length_type}
 
 # U+系列PC端
 https://report-u-01.youjiuhealth.com/report-view/report/adult/measure-report?id={measurementId}&token={combinationToken}&lang={lang}&weight_type={weight_type}&length_type={length_type}
